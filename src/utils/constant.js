@@ -22,3 +22,5 @@ export const LOGO =
 
   export const YOUTUBE_LINK = 'https://api.themoviedb.org/3/movie/';
   
+
+  export const TBDB_IMAGE_CDN_URL = "https://image.tmdb.org/t/p/w300/"
