@@ -24,3 +24,11 @@ export const LOGO =
   
 
   export const TBDB_IMAGE_CDN_URL = "https://image.tmdb.org/t/p/w300/"
+
+  export const SUPPORT_LANGUAGE = [
+    {identifier:"en" ,name:"English"},
+    {identifier:"hi" ,name:"Hindi"},
+    {identifier:"bh" ,name:"Bhojpuri"},
+    {identifier:"ba" ,name:"Bangla"},
+    {identifier:"sp" ,name:"Spanish"},
+  ]
