@@ -13,7 +13,7 @@ export const LOGO =
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MTZlNTVkZTA3MmM4ODZiYzNhODA1MDAxYTExODAwOSIsInN1YiI6IjY1MDcxYmMwZmEyN2Y0MDEyZDVhZDRlZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cp6979rqC6l_pk9gbjWedJtBvOq6GfEu43YBHIKCahk'
+        Authorization: 'Bearer' + process.env.REACT_APP_TBDB_IMAGE_CDN_URL
       }
     };
 
@@ -32,3 +32,5 @@ export const LOGO =
     {identifier:"ba" ,name:"Bangla"},
     {identifier:"sp" ,name:"Spanish"},
   ]
+
+  export const GPT_KEY = process.env.REACT_APP_GPT_KEY
