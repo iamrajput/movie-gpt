@@ -20,7 +20,6 @@ const fetchSearchMovie = async(movieName) => {
 const handleSearch = async() => {
 
    const gptQuery = "Act as a Movie Recommendation system and suggest some movies for the query : " +searchText.current.value +". only give me names of 5 movies,comma seperted like the example result givem ahead. Example Result:Gader,Sholay,Don,Golmaal,Koi mile gya "
-    console.log(searchText.current.value) 
       const gptResult = await openai.chat.completions.create({
         messages: [{ role: 'user', content: gptQuery}],
         model: 'gpt-3.5-turbo',
@@ -30,18 +29,13 @@ const handleSearch = async() => {
         return;
       }
     
-      console.log(gptResult.choices?.[0]?.message?.content);
+      
       const gptMovies = gptResult.choices?.[0]?.message?.content.split(",");
        //for each movie we will search tmdb 
       const promiseArray = gptMovies.map((movie) => fetchSearchMovie(movie));
-
       const tmdbResult = await Promise.all(promiseArray)
-
-      console.log("tmdbResult",tmdbResult)
-
+      
       dispatch(addGptMoviesResult({movieNames:gptMovies,movieResults:tmdbResult}))
-       
-
 }
 
 
@@ -49,8 +43,8 @@ const handleSearch = async() => {
 
 
   return (
-    <div className="pt-[10%] flex justify-center">
-      <form className="w-1/2 bg-black grid grid-cols-12" onSubmit={(e) => e.preventDefault()}>
+    <div className="pt-[40%] md:pt-[10%] flex justify-center">
+      <form className="md:w-1/2 w-full bg-black grid grid-cols-12" onSubmit={(e) => e.preventDefault()}>
         <input type="search" className="p-4 m-4 col-span-9" placeholder={lang[langKey]?.gptSearch}  ref={searchText}/>
         <button className="col-span-3 m-4 py-2 px-2 bg-red-700 text-white rounded-lg" onClick={handleSearch}>{lang[langKey]?.search}</button>
       </form>

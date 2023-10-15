@@ -13,7 +13,7 @@ export const LOGO =
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization: 'Bearer' + process.env.REACT_APP_TBDB_IMAGE_CDN_URL
+        Authorization: 'Bearer ' + process.env.REACT_APP_TBDB_IMAGE_CDN_URL
       }
     };
 

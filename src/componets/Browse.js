@@ -21,10 +21,8 @@ const Browse = () => {
     <Header />
     {toggleView ?  <GptSearch /> : 
     <>
-    (
     <MainContainer />
     <SecondaryContainer />
-    )
     </>
     }
     </>

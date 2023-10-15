@@ -13,7 +13,6 @@ const useBackgroupMovies = (movieId) => {
         })
         const trailer = filterData.length ?  filterData[0] : movieVideos.results[0];
         dispacth(addTrailerVideo(trailer))
-        console.log("back-video==",trailer)
      }
     
     

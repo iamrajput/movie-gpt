@@ -10,7 +10,6 @@ const moviesSlice = createSlice({
     },
     reducers:{
         addNowPlayingMovies: (state,action) => {
-         console.log(action.payload)
           state.nowPlayingMovies = action.payload;
         },
         addTrailerVideo: (state,action) => {

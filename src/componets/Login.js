@@ -19,11 +19,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const handleFormSubmission = () => {
-    //checkValidDate()
-    console.log("email===",email.current.value)
-    console.log("password===",password.current.value)
     const message = checkValidDate(email.current.value,password.current.value)
-    //console.log(isValid)
     setErrorMessage(message)
     if(message) return;
 
@@ -47,7 +43,6 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log("errorMessage===",errorMessage);
         });
     }else{
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
@@ -58,7 +53,6 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log("errorMessage===",errorMessage);
         });
     }
   }
