@@ -43,7 +43,7 @@ const Header = () => {
     return () => {
       unsubcribe();
     }
-}, [])
+}, [navigate,dispatch])
 
 
  const handleGptClick = () => {
