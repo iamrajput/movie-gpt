@@ -1,6 +1,4 @@
-import {useEffect} from 'react'
 import Header from './Header';
-import { API_OPTION } from '../utils/constant';
 import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
 import usePopularMovies from '../hooks/usePopularMovies';
 import useTopRatedMovies from '../hooks/useTopRatedMovies';

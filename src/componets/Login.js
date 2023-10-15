@@ -2,7 +2,7 @@ import {useState,useRef} from 'react';
 import Header from './Header';
 import { BG_URL,PROFILE_PICTURE } from '../utils/constant';
 import { checkValidDate } from '../utils/validate';
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile } from "firebase/auth";
 import { auth } from '../utils/firbase';
 import {useNavigate} from "react-router-dom"
 import { useDispatch } from 'react-redux';

@@ -1,5 +1,5 @@
 import {useState,useCallback} from 'react'
-import { LOGO, USER_AVATAR, SUPPORT_LANGUAGE } from '../utils/constant';
+import { LOGO, SUPPORT_LANGUAGE } from '../utils/constant';
 import { auth } from '../utils/firbase';
 import {useNavigate} from "react-router-dom"
 import { signOut } from "firebase/auth";

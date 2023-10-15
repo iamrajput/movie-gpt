@@ -1,10 +1,6 @@
-import {useEffect} from 'react'
 import Login from './Login';
 import Browse from './Browse';
-import {RouterProvider,createBrowserRouter,useNavigate} from "react-router-dom"
-import {onAuthStateChanged } from "firebase/auth";
-import { auth } from '../utils/firbase';
-import { useDispatch } from "react-redux";
+import {RouterProvider,createBrowserRouter} from "react-router-dom";
 
 const Body = () => {
  const appRouter = createBrowserRouter([
