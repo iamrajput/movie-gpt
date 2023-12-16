@@ -6,7 +6,9 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile
 import { auth } from '../utils/firbase';
 import {useNavigate} from "react-router-dom"
 import { useDispatch } from 'react-redux';
-import {addUser} from '../utils/userSlice'
+import {addUser} from '../utils/userSlice';
+
+import OAuth from './OAuth';
 
 const Login = () => {
   const [isSignInForm,setIsSignInForm] = useState(true)
@@ -91,6 +93,7 @@ const Login = () => {
         />
         <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
         <button className="p-4 my-6 bg-red-700 w-full rounded-lg" onClick={handleFormSubmission}> {isSignInForm ? "Sign In" : "Sign Up"}</button>
+        <OAuth />
         <p className="py-4 cursor-pointer" onClick={toggleSignInForm}> {isSignInForm ? "New to Netflix? Sign Up Now" : "Already register? Sign In Now"} </p>
     </form>
     </>

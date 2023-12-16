@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import openai from '../utils/openai';
 import { API_OPTION } from '../utils/constant';
 import {addGptMoviesResult} from '../utils/gptSlice'
+import {startFectching,stopFectching} from '../utils/moviesSlice'
 
 
 const GptSearchBar = () => {
@@ -18,6 +19,7 @@ const fetchSearchMovie = async(movieName) => {
 } 
 
 const handleSearch = async() => {
+  dispatch(startFectching());
 
    const gptQuery = "Act as a Movie Recommendation system and suggest some movies for the query : " +searchText.current.value +". only give me names of 5 movies,comma seperted like the example result givem ahead. Example Result:Gader,Sholay,Don,Golmaal,Koi mile gya "
       const gptResult = await openai.chat.completions.create({
@@ -36,6 +38,7 @@ const handleSearch = async() => {
       const tmdbResult = await Promise.all(promiseArray)
       
       dispatch(addGptMoviesResult({movieNames:gptMovies,movieResults:tmdbResult}))
+      dispatch(stopFectching());
 }
 
 

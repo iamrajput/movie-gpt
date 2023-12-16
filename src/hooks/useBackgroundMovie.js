@@ -8,6 +8,7 @@ const useBackgroupMovies = (movieId) => {
     const getMovieVideoForBackGround = async(movieId) => {
         const data = await fetch(YOUTUBE_LINK +`${movieId}/videos`,API_OPTION)
         const movieVideos = await data.json();
+        console.log("movieVideos===",movieVideos)
         const filterData = movieVideos.results.filter((video) => {
            return video.type === TRAILER
         })
